@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 예제10 - fade</title>
+
+<style type="text/css">
+div {
+	width: 400px;
+	height: 150px;
+	background-color: #00bfff;
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+	$(function(){
+		
+		$("#btn").bind("click", function(){
+			
+ 			if($(this).val() == "숨기기"){
+ 				
+ 				//$("div").fadeOut(1000); 	//1초
+ 				$("div").fadeTo(500, 0.0);	//시간+투명도
+ 				
+				$(this).prop("value", "보이기");
+				
+ 				
+ 			} else {	
+ 				
+ 				//$("div").fadeIn(500);	
+ 				$("div").fadeTo(500, 1.0);
+ 				
+				$(this).prop("value", "숨기기");
+				
+ 			}	
+			
+		});
+		
+		
+		
+	});
+	
+</script>
+
+
+</head>
+
+
+<body>
+
+	<h1>jQuery 예제10 - fade</h1>
+
+	<input type="button" value="숨기기" id="btn" />
+
+	<div>수요일</div>
+
+
+</body>
+</html>

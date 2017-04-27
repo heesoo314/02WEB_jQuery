@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery UI 예제 01 - dialog, datepicker</title>
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script type="text/javascript">
+
+/* jQuery 위젯 : http://jqueryui.com */
+
+
+
+	$(function(){
+//		$("#md").dialog({
+//			title: "My Dialog"
+//		});
+
+
+		$("#md").dialog();
+		
+		$( "#datepicker" ).datepicker();
+
+	});
+	
+</script>
+
+</head>
+
+
+<body>
+
+	<h1>jQuery UI 예제 01 - dialog, datepicker</h1>
+	
+	<!-- 대화상자로 보여질 UI -->
+	<div id="md">JQuery UI에서 지원하는 대화상자</div>
+
+	<p>Date: <input type="text" id="datepicker"></p>
+
+</body>
+</html>

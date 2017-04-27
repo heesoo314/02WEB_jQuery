@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 예제05 - 행추가</title>
+
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+	
+	$( function() {
+		
+		$("#btn").bind("click", function(){
+			
+			var count = 0;
+			
+			//tbody에 들어갈 코드 생성
+			var str = "<tr>";
+			
+			for(var i=0; i<3; i++){
+				str += "<td> Col " + (++count) + "</td>";
+			}
+			
+			str += "</tr>";
+			
+			// (대상).append(내용)
+			$("#table tbody").append(str);
+			
+		});
+		
+	});
+
+</script>
+</head>
+<body>
+
+	<h1>jQuery를 이용한 행 추가</h1>
+	
+	<input type="button" id="btn" value="추가">
+	
+	<table id="table" border="1">
+
+		<thead>
+			<tr>
+				<th>Column 1</th>
+				<th>Column 2</th>
+				<th>Column 3</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr>
+				<td>Col 1</td>
+				<td>Col 2</td>
+				<td>Col 3</td>
+			</tr>
+
+			<tr>
+				<td>Col 1</td>
+				<td>Col 2</td>
+				<td>Col 3</td>
+			</tr>
+		</tbody>
+
+	</table>
+
+</body>
+</html>

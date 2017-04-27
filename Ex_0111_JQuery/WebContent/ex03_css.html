@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 예제03 - css</title>
+
+<style type="text/css">
+
+div#box {
+	width:300px; height:200px;
+	margin-top:10px;
+	padding:10px;
+	border:1px solid blue;
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+
+<script type="text/javascript">
+
+	$(function(){
+	
+		// id가 버튼인 요소를 만나면 클릭이벤트를 설정
+		$("#btn").bind("click", function(){
+			
+			var str = "";
+			
+			var list = $("li");	// 현재 문서에 존재하는 li 태그 모두를 list에 담는다 -> '배열화'
+			
+			list[6].style.color = "red";		//javascript
+			// $("li").style.color (x)
+			
+			list.eq(5).css("color", "green");	//jQuery, 배열.eq(idx)
+			
+			
+			// .index() : 특정 객체의 인덱스 값을 구한다
+			// list의 있는 요소 중 id가 item2인 요소의 인덱스를 idx에 저장
+			var idx = list.index( $("#item2") );
+			alert(idx);
+			
+		}); //btn bind
+		
+	});
+	
+	
+</script>
+
+
+</head>
+
+
+<body>
+
+	<h2>jQuery 예제03 - css</h2>
+	
+	
+	<h3>과목</h3>
+	<ul>
+		<li id="item1">Java</li>
+		<li>Android</li>
+	</ul>
+	<ul>
+		<li id="item2">HTML</li>
+		<li>Javascript</li>
+		<li>JQuery</li>
+	</ul>
+	<ul>
+		<li>JSP</li>
+		<li>SQL</li>
+	</ul>
+	
+	<input type="button" id="btn" value="확인" />
+	<div id="box">BOX</div>
+</body>
+</html>

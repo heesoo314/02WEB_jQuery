@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 예제04 - 선택자</title>
+
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+	$( function() {
+		
+		$("#btn").bind("click", function(){
+			
+			var str = "";
+			
+			// 클래스, 태그를 ar (배열)에 담는다
+			var ar = $(".test, span, div");
+			
+			for(var i=0; i<ar.length; i++){
+				
+				str += ar.eq(i).text() + "\n";
+			}
+			
+			alert(str); 
+		
+			
+		}); 
+		
+	});
+
+</script>
+
+</head>
+
+<body>
+
+	<h2>jQuery 예제04 - 선택자</h2>
+	
+	<input type="button" id="btn" value="확인" />
+	
+	<h1 class="test">h1 요소</h1>
+	<p>p 요소1</p>
+	<p>p 요소2</p>
+	<p>p 요소3</p>
+	<span>span 요소</span>
+	<p class="test">p 요소4</p>
+	<p>p 요소5</p>
+	<div>div 요소</div>
+	
+</body>
+</html>

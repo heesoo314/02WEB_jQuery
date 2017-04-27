@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 예제02 - each</title>
+
+<style type="text/css">
+
+div#box {
+	width:300px; height:200px;
+	margin-top:10px;
+	padding:10px;
+	border:1px solid blue;
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+
+<script type="text/javascript">
+
+	$(function(){
+	
+		// id가 버튼인 요소를 만나면 클릭이벤트를 설정
+		$("#btn").bind("click", function(){
+			
+			var str = "";
+			
+			
+			// li 태그를 만날 때 마다 함수 수행... 마치 for문 처럼?
+			$("li").each(function(){
+				
+				// 여기서의 this는 곧 li 태그를 의미
+				// .text() -> 요소가 가지고 있는 문자열을 가지고 온다. (getText)
+				str += $(this).text() + "<br/>";	
+				
+				
+				
+			}); //li each
+			
+			//$(str).appendTo("#box");
+			
+			// box에 str 문자열을 넣어준다.	(setText)
+			// $("#box").text(str);		// ~~~.innerText = "abc";
+			$("#box").html(str);		// ~~~.innerHTML = str;
+			
+		}); //btn bind
+		
+	});
+	
+	
+</script>
+
+
+</head>
+
+
+<body>
+
+	<h2>jQuery 예제02 - each</h2>
+	
+	
+	<h3>과목</h3>
+	<ul>
+		<li>Java</li>
+		<li>Android</li>
+	</ul>
+	<ul>
+		<li>HTML</li>
+		<li>Javascript</li>
+		<li>JQuery</li>
+	</ul>
+	<ul>
+		<li>JSP</li>
+		<li>SQL</li>
+	</ul>
+	
+	<input type="button" id="btn" value="확인" />
+	<div id="box">BOX</div>
+</body>
+</html>

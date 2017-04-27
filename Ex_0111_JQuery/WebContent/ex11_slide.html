@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 예제11 - slide toggle</title>
+
+<style type="text/css">
+div {
+	width: 400px;
+	height: 150px;
+	background-color: #00bfff;
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+	$(function(){
+		
+		$("#btn").bind("click", function(){
+
+			
+			// 버튼 value 먼저 바꾸고
+			$(this).prop("value", 
+					$("div").is(":hidden")? "숨기기":"보이기"); // 삼항연산자로 바꾸기!
+			
+			// 실제 보이기/숨기기 실행은 여기서 
+			$("div").slideToggle(300);
+			
+			
+		});
+		
+		
+		
+	});
+	
+</script>
+
+
+
+
+</head>
+
+
+<body>
+
+	<h1>jQuery 예제11 - slide toggle</h1>
+
+	<input type="button" value="숨기기" id="btn" />
+
+	<div>
+		수요일
+	</div>
+
+
+</body>
+</html>

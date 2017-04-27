@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 예제08 - 클래스 적용/해제</title>
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+	$(function(){
+		
+		// div 중 첫번째 div의 자식 요소에 글자색 변경
+		$("div").eq(0).children().css("color", "#f00");
+		
+		var ch = true;
+		
+		$("#btn1").bind("click", function(){
+			
+			if(ch){
+				
+				//두번째 div의 자식들에게 test라는 클래스 적용!
+				$("div").eq(1).children().addClass("test");
+				
+				//버튼의 value를 변경
+				$(this).val("CSS해제");	// = $(this).prop("value", "CSS해제")
+				
+			}else{
+				
+				//두번째 div의 자식들에게
+				//test라는 클래스를 적용해제!
+				$("div").eq(1).children().removeClass("test");
+				
+				$(this).val("CSS적용");
+			}
+			
+			ch = !ch;
+		});
+		
+	});
+	
+</script>
+
+<style type="text/css">
+
+.test {
+	font-size:20px;
+	font-weight:bold;
+	color:blue;
+}
+
+</style>
+</head>
+
+
+<body>
+
+	<h1>jQuery 예제08- 클래스 적용/해제</h1>
+
+	<input type="button" value="CSS적용" id="btn1" />
+
+	<div>
+		<p>수요일</p>
+		<em>집에 가고 싶다아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ</em>
+	</div>
+	
+	<div>
+		<p>케언즈</p>
+		<p>시드니</p>
+	</div>
+</body>
+</html>

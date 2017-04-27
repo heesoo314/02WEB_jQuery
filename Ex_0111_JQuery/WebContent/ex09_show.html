@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 예제09 - show?</title>
+
+<style type="text/css">
+div {
+	width: 400px;
+	height: 150px;
+	background-color: #00bfff;
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+	$(function(){
+		
+		$("#btn").bind("click", function(){
+			
+/* 			if($(this).val() == "숨기기"){
+				// 현재 div는 보여지고 있는 상태 -> display:block
+				
+				$(this).val("보이기");
+				
+			} else {
+				
+				$(this).val("숨기기");
+				
+			} */
+			
+			
+			// 버튼 value 먼저 바꾸고
+			$(this).prop("value", 
+					$("div").is(":hidden")? "숨기기":"보이기"); // 삼항연산자로 바꾸기!
+			
+			// 실제 보이기/숨기기 실행은 여기서 
+			$("div").toggle(300);
+			
+			
+		});
+		
+		
+		
+	});
+	
+</script>
+
+<style type="text/css">
+.test {
+	font-size: 20px;
+	font-weight: bold;
+	color: blue;
+}
+</style>
+</head>
+
+
+<body>
+
+	<h1>jQuery 예제09 - show?</h1>
+
+	<input type="button" value="숨기기" id="btn" />
+
+	<div>
+		수요일
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 예제07 - 이벤트</title>
+
+<style type="text/css">
+div#box {
+	width:300px; height:200px;
+	margin-top:10px;
+	padding:10px;
+	border:1px solid blue;
+
+</style>
+
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+	$(function(){
+		
+		// 버튼 누르면 텍스트가 추가되면서 보이기
+		$("#btn1").bind("click", function(){
+			
+			$("#box").html("<h2>반갑습니다</h2>");
+			
+		});
+		
+		// 버튼 누르면 텍스트 삭제
+		$("#btn2").bind("click", function(){
+			
+			$("#box").html("");
+			
+			// btn1의 이벤트해제
+			$("#btn1").unbind("click");
+			
+		});
+		
+		
+	});
+</script>
+
+</head>
+
+
+<body>
+
+	<h1>jQuery 예제07 - 이벤트</h1>
+
+	<input type="button" value="보이기" id="btn1" />
+	<input type="button" value="숨기기" id="btn2" />
+
+	<div id="box"></div>
+</body>
+</html>

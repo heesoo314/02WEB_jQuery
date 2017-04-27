@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 예제06 - 체크박스</title>
+
+<style type="text/css">
+#table {
+	width:500px;
+	border:1px solid black;
+	border-spacing:0;
+	border-collapse:collapse;
+}
+
+#table th, #table td{
+	border:1px solid black;
+	padding:5px;
+}
+
+#table th {
+	text-align: left;
+}
+	
+.ch {
+	width:30px;
+}
+
+</style>
+
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+
+<script type="text/javascript">
+ 
+ 	$(function(){
+ 		
+ 		// all 버튼 누르면 체크박스 전체해제 수행
+ 		$("#all").bind("click", function(){
+ 			
+ 			// 1) tbody안에 있는 checkbox 모두를 ar 배열에 담는다.
+			// var ar = $("tbody input[type=checkbox]");
+			
+ 			// 2) .find() : tbody안에 있는 요소 중 ~~~ 한것을 찾아라! 
+ 			//var ar = $("tbody").find("input[type=checkbox]");
+ 	
+ 			// 3) tbody안에서 속성값이 "checkbox"인 요소를 찾는다.
+ 			var ar = $("tbody").find(":checkbox");
+ 			
+ 			
+ 			// .prop("속성명", 값) 	this = all
+ 			ar.prop("checked", this.checked);
+ 			
+ 			
+ 			// 전체선택이 체크 되었을 때 선택해제로 문자열 변경
+ 			// this(all 버튼) 다음에 바로 오는(next) span 태그에 적용하겠다!
+ 			if(this.checked){
+ 				$(this).next().text("선택해제");
+ 				
+ 			} else {
+ 				$(this).next().text("전체선택");
+ 				
+ 			}
+ 			
+ 			
+ 		}); // all onclick
+ 	});
+ 	
+ </script>
+
+</head>
+<body>
+	<h1>jQuery를 이용한 체크박스 제어</h1>
+
+	<table id="table" border="1">
+		<thead>
+			<tr>
+				<th colspan="2"><input type="checkbox" id="all" /><span>전체선택</span></th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td class="ch"><input type="checkbox" id="ch1" /></td>
+				<td>항목1</td>
+			</tr>
+			<tr>
+				<td class="ch"><input type="checkbox" id="ch2" /></td>
+				<td>항목2</td>
+			</tr>
+			<tr>
+				<td class="ch"><input type="checkbox" id="ch3" /></td>
+				<td>항목3</td>
+			</tr>
+			<tr>
+				<td class="ch"><input type="checkbox" id="ch4" /></td>
+				<td>항목4</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

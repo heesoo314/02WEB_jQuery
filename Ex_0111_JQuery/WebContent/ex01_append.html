@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 예제 01 - append</title>
+
+<style type="text/css">
+div#box {
+	width:300px; height:200px;
+	margin-top:10px;
+	padding:10px;
+	border:1px solid blue;
+}
+
+.test {
+	width:80%;
+	margin: 10px auto;
+	padding:10px;
+	background-color:green;
+	color:white;
+}
+
+.test2 {
+	width:80%;
+	margin: 50px auto;
+	padding:10px;
+	background-color:red;
+	color:white;
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+
+<script type="text/javascript">
+
+	$(function(){
+		//현재 내용이 시작될 때 해야할 일
+		
+		//버튼에 이벤트 적용
+		$("input[type=button]").bind("click", function(){
+			
+			// id가 box인 곳에 HTML 코드 '추가'
+			// 내용.appendTo(대상)
+			$("<p class='test'>p요소</p>").appendTo("#box");
+	
+			// id가 box인 곳에 HTML 코드 '추가' 및 '덮어쓰기'???
+			//document.getElementById("box").innerHTML = "<p class='test2'>p요소2</p>";
+			
+		}); //button onclick
+		
+	});
+	
+	
+</script>
+
+
+</head>
+
+
+<body>
+
+	<h2>jQuery 예제 01 - append</h2>
+	<input type="button" value="확인" />
+	<div id="box">BOX</div>
+
+</body>
+</html>
